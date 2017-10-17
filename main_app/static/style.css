@@ -1,0 +1,13 @@
+h1 {
+	color: green;
+}
+.navbar {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.navbar-default {
+  background: #fdf9f0;
+  border-color: #ece4cf;
+}
