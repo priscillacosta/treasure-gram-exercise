@@ -65,43 +65,5 @@ body {
   padding: 20px;
   position: relative;
   text-align: center;
-  width: 50%;
-}
-
-.treasure-photo img {
-  height: 180px;
-  max-width: 100%;
-}
-
-.treasure-table {
-  float: left;
-  margin-top: 10px;
-  width: 45%;
-}
-
-.treasure-table img {
-  margin-right: 10px;
-}
-
-.treasure-table tr {
-  border-bottom: 1px solid #ece4cf;
-}
-
-.treasure-table td,
-.treasure-table th {
-  font-weight: bold;
-  font-size: 1.3em;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  vertical-align: baseline;
-}
-
-.treasure-table th {
-  color: #e0ccb2;
-  white-space: nowrap;
-}
-
-.treasure-table td:last-child {
-  padding-left: 20px;
   width: 100%;
 }
