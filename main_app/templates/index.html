@@ -1,45 +1,39 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css"
-		href="{% static 'style.css' %}" />
-		<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-	<title>TreasureGram</title>
-</head>
-<body>
-	<nav class="navbar navbar-default navbar-static-top text-center" role="navigation">
-		<a href="/">
-			<img src="{% static 'images/logo.png' %}">
-		</a>
-	</nav>
-	<main class="container container--mw700">
+
+{% block content %}
 		<div class="row">
 			{% for treasure in treasures %}
-			<div class="col-md-4" style="margin-bottom: 20px">
-				<div class="treasure panel panel-default">
-					<div class="panel-heading">
-						<h2 class="panel-title">{{ treasure.name }}</h2>
-					</div>
+			<a href="/{{treasure.id}}">
+				<div class="col-md-4" style="margin-bottom: 20px">
+					<div class="treasure panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">{{ treasure.name }}</h2>
+						</div>
 
 					<div class="panel-body">
 						<div class="treasure-photo" >
-							<img src="{{ treasure.img_url }}" height="100">
+							<img src="{{ treasure.image }}" height="100">
 						</div>
 					</div>
 				</div>
-			</div>
+			</a>
+		</div>
 			{% if forloop.counter|divisibleby:3 %}
 				</div><div class="row">
 			{% endif %}
 		{% endfor %}
 		</div>
-	</main>
-	<footer class="footer container text-center" role="contentinfo">
-  <img src="{% static 'images/brand-icon.png' %}" height="50" alt="">
-  © TreasureGram 2016
-  <img src="{% static 'images/brand-icon.png' %}" height="50" alt="">
-</footer>
-</body>
-</html>
+	<div class="treasure panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Add Treasure</h3>
+		</div>
+		<div class="panel-body">
+			<form enctype="multipart/form-data" action="post_url/" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+	</div>
+{% endblock %}

@@ -67,3 +67,49 @@ body {
   text-align: center;
   width: 100%;
 }
+.treasure-photo-detail {
+  background: #fdf2e1;
+  float: left;
+  margin-right: 5%;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  width: 50%;
+}
+.treasure-photo img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.treasure-table {
+  float: left;
+  margin-top: 10px;
+  width: 45%;
+}
+
+.treasure-table img {
+  margin-right: 10px;
+}
+
+.treasure-table tr {
+  border-bottom: 1px solid #ece4cf;
+}
+
+.treasure-table td,
+.treasure-table th {
+
+  font-size: 1.1em;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  vertical-align: baseline;
+}
+
+.treasure-table th {
+  color: #e0ccb2;
+  white-space: nowrap;
+}
+
+.treasure-table td:last-child {
+  padding-left: 20px;
+  width: 100%;
+}
