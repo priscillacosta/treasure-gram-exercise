@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block content %}
 		<div class="row">
 			{% for treasure in treasures %}
@@ -8,12 +7,18 @@
 				<div class="col-md-4" style="margin-bottom: 20px">
 					<div class="treasure panel panel-default">
 						<div class="panel-heading">
-							<h2 class="panel-title">{{ treasure.name }}</h2>
+							<h2 class="panel-title" style="color: black">{{ treasure.name }}</h2>
+							<a class="panel-username"
+								href="/user/{{treasure.user.username}}/" style="color: black">
+								 by: {{ treasure.user.username }}
+							  </a>
 						</div>
 
 					<div class="panel-body">
+						<a href="/{{treasure.id}}/">
+
 						<div class="treasure-photo" >
-							<img src="{{ treasure.image }}" height="100">
+							<img src="{{ treasure.image.url }}" height="100">
 						</div>
 					</div>
 				</div>
